@@ -25,8 +25,8 @@ export default function ProductDetail() {
     load();
   }, [id]);
 
-  if (error) return <p>{error}</p>;
-  if (!product) return <p>Loading...</p>;
+  if (error) return <p className="error-msg">{error}</p>;
+  if (!product) return <p className="loader"></p>;
 
   return (
     <div className="detail">

@@ -9,7 +9,7 @@ export default function App() {
     <>
       <Header />
       <main className="main-content">
-        <Suspense fallback={<p>Loading products...</p>}>
+        <Suspense fallback={<p className="loader"></p>}>
           <ProductList />
         </Suspense>
       </main>
