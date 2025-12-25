@@ -13,9 +13,21 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
   },
-  { path: "/product/:id", element: <ProductDetail /> },
-  { path: "/cart", element: <Cart /> },
-  { path: "/checkout", element: <Checkout /> },
+  {
+    path: "/product/:id",
+    element: <ProductDetail />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
+    errorElement: <NotFound />,
+  },
 ]);
 
 export default function Router() {

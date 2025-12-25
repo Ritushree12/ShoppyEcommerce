@@ -86,10 +86,12 @@ export default function ProductDetail() {
           <div className="meta-item">
             <strong>Weight:</strong> {product.weight}g
           </div>
-          <div className="meta-item">
-            <strong>Dimensions:</strong> {product.dimensions?.width} ×{" "}
-            {product.dimensions?.height} × {product.dimensions?.depth} cm
-          </div>
+          {product.dimensions && (
+            <div className="meta-item">
+              <strong>Dimensions:</strong> {product.dimensions.width} ×{" "}
+              {product.dimensions.height} × {product.dimensions.depth} cm
+            </div>
+          )}
           <div className="meta-item">
             <strong>Warranty:</strong> {product.warrantyInformation}
           </div>
