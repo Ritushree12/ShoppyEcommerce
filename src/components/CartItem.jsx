@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { changeQuantity, removeFromCart } from "../redux/cartSlice";
+import { changeQuantity } from "../redux/cartSlice";
 import trashIcon from "../assets/trash.png";
 import "../styles/styles.css";
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, onRemove }) {
   const dispatch = useDispatch();
 
   return (
@@ -53,7 +53,7 @@ export default function CartItem({ item }) {
           }
         />
       </div>
-      <button onClick={() => dispatch(removeFromCart(item.id))}>
+      <button onClick={() => onRemove(item.id, item.title)}>
         <img src={trashIcon} alt="Remove" className="trash-icon" />
       </button>
     </div>

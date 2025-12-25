@@ -30,6 +30,28 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--discount-color);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .header {
   padding: 1rem;
