@@ -55,6 +55,22 @@ body {
   padding: 1rem;
 }
 
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--discount-color);
+  font-size: var(--subheading-size);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+}
+
+.no-products p {
+  margin: 0;
+  font-weight: 500;
+}
+
 .card,
 .cart-item {
   border: 1px solid #ccc;

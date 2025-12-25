@@ -16,9 +16,15 @@ export default function ProductList() {
     <>
       <h1 className="product-list-title">Products</h1>
       <div className="grid">
-        {filtered.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
+        {filtered.length > 0 ? (
+          filtered.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))
+        ) : (
+          <div className="no-products">
+            <p>No products found.</p>
+          </div>
+        )}
       </div>
     </>
   );
