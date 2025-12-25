@@ -8,9 +8,11 @@ export default function App() {
   return (
     <>
       <Header />
-      <Suspense fallback={<p>Loading products...</p>}>
-        <ProductList />
-      </Suspense>
+      <main className="main-content">
+        <Suspense fallback={<p>Loading products...</p>}>
+          <ProductList />
+        </Suspense>
+      </main>
     </>
   );
 }

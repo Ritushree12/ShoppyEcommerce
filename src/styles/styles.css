@@ -24,6 +24,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: var(--background-color);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header {
@@ -33,6 +35,14 @@ body {
   justify-content: space-between;
   align-items: center;
   background: #f5f5f5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  padding-top: 4rem;
 }
 
 .grid {
@@ -238,7 +248,6 @@ header {
   position: fixed;
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: 80px;
 }
 nav {
   display: flex;
@@ -246,10 +255,19 @@ nav {
   color: var(--secondary-color);
   font-size: var(--body-size);
 }
-nav :hover {
-  color: var(--secondary-color-hover);
+
+.nav-link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease, transform 0.25s ease;
 }
-nav :visited {
+
+.nav-link:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.nav-link :visited {
   color: var(--secondary-color);
 }
 .home-page-title {

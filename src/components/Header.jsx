@@ -23,6 +23,14 @@ export default function Header() {
           Home
         </Link>
         <Link className="nav-link" to="/cart">
+          <img
+            width="15px"
+            height="20px"
+            src="/src/assets/shopping-bag.png"
+            alt="Cart"
+            className="cart-icon"
+          />
+          <span> </span>
           Cart ({cartItems.length})
         </Link>
       </nav>
