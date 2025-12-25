@@ -5,18 +5,31 @@ import "../styles/styles.css";
 
 export default function Header() {
   const cartItems = useSelector((s) => s.cart.items);
+  const search = useSelector((s) => s.cart.search);
   const dispatch = useDispatch();
 
   return (
     <header className="header">
       <h1 className="home-page-title">ShoppyGlobe</h1>
 
-      <input
-        className="home-page-search"
-        type="text"
-        placeholder="Search..."
-        onChange={(e) => dispatch(setSearch(e.target.value))}
-      />
+      <div className="search-container">
+        <input
+          className="home-page-search"
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => dispatch(setSearch(e.target.value))}
+        />
+        {search && (
+          <button
+            className="clear-search-btn"
+            onClick={() => dispatch(setSearch(""))}
+            title="Clear search"
+          >
+            ✕
+          </button>
+        )}
+      </div>
 
       <nav>
         <Link className="nav-link" to="/">

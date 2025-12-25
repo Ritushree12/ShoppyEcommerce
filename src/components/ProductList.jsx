@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { setSearch } from "../redux/cartSlice";
 import useProducts from "../hooks/useProducts";
 import ProductItem from "./ProductItem";
 
 export default function ProductList() {
   const { products, error } = useProducts();
   const search = useSelector((s) => s.cart.search);
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/" && search) {
+      dispatch(setSearch(""));
+    }
+  }, [location.pathname, dispatch]);
 
   const filtered = products.filter((p) =>
     p.title.toLowerCase().includes(search.toLowerCase())
