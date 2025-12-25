@@ -8,35 +8,41 @@ export default function ProductItem({ product }) {
 
   return (
     <div className="card">
-      <img
-        loading="lazy"
-        src={product.thumbnail}
-        alt={product.title}
-        className="product-image-list-page"
-      />
-      <h3>{product.title}</h3>
-      <div className="price-section">
-        <div className="current-price">
-          <span className="discount-price">
-            $
-            {(product.price * (1 - product.discountPercentage / 100)).toFixed(
-              2
-            )}
-          </span>
-        </div>
-        <div className="price-row">
-          <span className="original-price">${product.price}</span>
-          <span className="discount-percent">
-            {product.discountPercentage}% OFF
-          </span>
+      <div className="card-content">
+        <img
+          loading="lazy"
+          src={product.thumbnail}
+          alt={product.title}
+          className="product-image-list-page"
+        />
+        <h3>{product.title}</h3>
+        <div className="price-section">
+          <div className="current-price">
+            <span className="discount-price">
+              $
+              {(product.price * (1 - product.discountPercentage / 100)).toFixed(
+                2
+              )}
+            </span>
+          </div>
+          <div className="price-row">
+            <span className="original-price">${product.price}</span>
+            <span className="discount-percent">
+              {product.discountPercentage}% OFF
+            </span>
+          </div>
         </div>
       </div>
 
-      <Link to={`/product/${product.id}`} className="view-link">
-        View Product
-      </Link>
+      <div className="card-actions">
+        <Link to={`/product/${product.id}`} className="view-link">
+          View Product
+        </Link>
 
-      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+        <button onClick={() => dispatch(addToCart(product))}>
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 }
