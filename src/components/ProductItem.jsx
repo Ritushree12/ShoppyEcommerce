@@ -15,14 +15,21 @@ export default function ProductItem({ product }) {
         className="product-image-list-page"
       />
       <h3>{product.title}</h3>
-      <div className="price-row">
-        <span className="discount-price">
-          ${(product.price * (1 - product.discountPercentage / 100)).toFixed(2)}
-        </span>
-        <span className="original-price">${product.price}</span>
-        <span className="discount-percent">
-          {product.discountPercentage}% off
-        </span>
+      <div className="price-section">
+        <div className="current-price">
+          <span className="discount-price">
+            $
+            {(product.price * (1 - product.discountPercentage / 100)).toFixed(
+              2
+            )}
+          </span>
+        </div>
+        <div className="price-row">
+          <span className="original-price">${product.price}</span>
+          <span className="discount-percent">
+            {product.discountPercentage}% OFF
+          </span>
+        </div>
       </div>
 
       <Link to={`/product/${product.id}`}>View</Link>

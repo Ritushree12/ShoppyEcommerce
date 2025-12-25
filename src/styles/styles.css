@@ -143,10 +143,20 @@ body {
   color: var(--secondary-color);
   font-size: var(--subheading-size);
 }
+.price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.current-price {
+  display: flex;
+  justify-content: center;
+}
 .price-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: center;
 }
 .original-price {
   text-decoration: line-through;
