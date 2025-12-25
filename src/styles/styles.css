@@ -319,6 +319,9 @@ nav {
   text-decoration: none;
   color: var(--secondary-color);
   transition: color 0.3s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-link:hover {
