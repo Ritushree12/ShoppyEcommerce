@@ -282,3 +282,12 @@ nav {
   font-size: var(--body-size);
   outline: none;
 }
+
+/*Product list page styles*/
+.product-image-list-page {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}

@@ -8,7 +8,12 @@ export default function ProductItem({ product }) {
 
   return (
     <div className="card">
-      <img loading="lazy" src={product.thumbnail} alt={product.title} />
+      <img
+        loading="lazy"
+        src={product.thumbnail}
+        alt={product.title}
+        className="product-image-list-page"
+      />
       <h3>{product.title}</h3>
       <div className="price-row">
         <span className="discount-price">
