@@ -333,6 +333,13 @@ nav {
   font-size: var(--heading-size);
   color: var(--primary-color);
   text-shadow: var(--text-shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
 }
 .home-page-search {
   padding: 0.5rem;

@@ -10,7 +10,14 @@ export default function Header() {
 
   return (
     <header className="header">
-      <h1 className="home-page-title">ShoppyGlobe</h1>
+      <h1 className="home-page-title">
+        <img
+          src="/src/assets/eco-bag.png"
+          alt="ShoppyGlobe Logo"
+          className="logo-img"
+        />
+        ShoppyGlobe
+      </h1>
 
       <div className="search-container">
         <input
