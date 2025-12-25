@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import "../styles/styles.css";
 
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+  const isInCart = cartItems.some((item) => item.id === product.id);
 
   return (
     <div className="card">
@@ -39,8 +41,11 @@ export default function ProductItem({ product }) {
           View Product
         </Link>
 
-        <button onClick={() => dispatch(addToCart(product))}>
-          Add to Cart
+        <button
+          onClick={() => dispatch(addToCart(product))}
+          disabled={isInCart}
+        >
+          {isInCart ? "Added to Cart" : "Add to Cart"}
         </button>
       </div>
     </div>

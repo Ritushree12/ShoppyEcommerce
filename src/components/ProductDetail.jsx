@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 
 export default function ProductDetail() {
@@ -8,6 +8,8 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+  const isInCart = product && cartItems.some((item) => item.id === product.id);
 
   useEffect(() => {
     async function load() {
@@ -116,9 +118,13 @@ export default function ProductDetail() {
         <button
           className="add-to-cart-btn"
           onClick={() => dispatch(addToCart(product))}
-          disabled={product.stock === 0}
+          disabled={product.stock === 0 || isInCart}
         >
-          {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
+          {isInCart
+            ? "Added to Cart"
+            : product.stock > 0
+            ? "Add to Cart"
+            : "Out of Stock"}
         </button>
 
         {product.reviews && product.reviews.length > 0 && (

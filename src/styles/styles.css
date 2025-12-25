@@ -344,10 +344,16 @@ nav {
 }
 
 /* Hover effect for main card buttons */
-.card button:hover,
+.card button:hover:not(:disabled),
 .card a:not(.view-link):hover {
   background-color: #45a049; /* slightly darker green */
   transform: scale(1.05); /* subtle zoom effect */
+}
+
+.card button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Specific styling for "View Product" link */
