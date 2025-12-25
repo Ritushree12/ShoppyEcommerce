@@ -32,7 +32,9 @@ export default function ProductItem({ product }) {
         </div>
       </div>
 
-      <Link to={`/product/${product.id}`}>View</Link>
+      <Link to={`/product/${product.id}`} className="view-link">
+        View Product
+      </Link>
 
       <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
     </div>

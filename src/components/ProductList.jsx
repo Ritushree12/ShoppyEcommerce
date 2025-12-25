@@ -13,10 +13,13 @@ export default function ProductList() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="grid">
-      {filtered.map((product) => (
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
+    <>
+      <h1 className="product-list-title">Products</h1>
+      <div className="grid">
+        {filtered.map((product) => (
+          <ProductItem key={product.id} product={product} />
+        ))}
+      </div>
+    </>
   );
 }
