@@ -34,8 +34,8 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--discount-color);
-  color: white;
+  background-color: #ffcdc9;
+  color: #8b0000;
   padding: 1rem 1.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
