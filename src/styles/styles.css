@@ -351,6 +351,10 @@ nav {
   font-size: var(--body-size);
   outline: none;
 }
+.home-page-search:focus {
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  border-color: var(--primary-color);
+}
 .search-container {
   display: flex;
   align-items: center;
