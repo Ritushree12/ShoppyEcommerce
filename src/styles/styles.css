@@ -483,7 +483,7 @@ nav {
 /* Product Detail Page Styles */
 .detail {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem 3rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
