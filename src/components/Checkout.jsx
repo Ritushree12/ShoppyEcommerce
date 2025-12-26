@@ -68,6 +68,7 @@ export default function Checkout() {
               src={item.thumbnail}
               alt={item.title}
               className="checkout-item-image"
+              loading="lazy"
             />
             <div className="checkout-item-details">
               <h3>{item.title}</h3>

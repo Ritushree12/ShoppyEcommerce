@@ -7,6 +7,7 @@ export default function NotFound() {
         src="/src/assets/404-error.png"
         alt="404 Error"
         className="error-image"
+        loading="lazy"
       />
       <h2>404 — Page Not Found</h2>
       <p>The page you tried to access does not exist.</p>

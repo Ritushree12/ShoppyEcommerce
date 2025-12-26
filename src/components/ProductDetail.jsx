@@ -42,6 +42,7 @@ export default function ProductDetail() {
                 <img
                   key={index}
                   src={image}
+                  loading="lazy"
                   alt={`${product.title} ${index + 2}`}
                 />
               ))}

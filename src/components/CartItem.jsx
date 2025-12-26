@@ -56,7 +56,12 @@ export default function CartItem({ item, onRemove }) {
         className="remove-btn"
         onClick={() => onRemove(item.id, item.title)}
       >
-        <img src={trashIcon} alt="Remove" className="trash-icon" />
+        <img
+          src={trashIcon}
+          alt="Remove"
+          className="trash-icon"
+          loading="lazy"
+        />
       </button>
     </div>
   );

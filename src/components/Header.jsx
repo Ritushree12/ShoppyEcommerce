@@ -19,6 +19,7 @@ export default function Header() {
           src="/src/assets/eco-bag.png"
           alt="ShoppyGlobe Logo"
           className="logo-img"
+          loading="lazy"
         />
         ShoppyGlobe
       </h1>
@@ -70,6 +71,7 @@ export default function Header() {
             src="/src/assets/shopping-bag.png"
             alt="Cart"
             className="cart-icon"
+            loading="lazy"
           />
           <span> </span>
           Cart ({cartItems.length})

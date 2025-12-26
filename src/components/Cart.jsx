@@ -29,6 +29,7 @@ export default function Cart() {
             height="50px"
             src="/src/assets/sad-face.png"
             alt="Shopping Cart"
+            loading="lazy"
           />
           <br />
           <p className="empty">Your cart is empty!</p>
