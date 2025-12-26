@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setSearch } from "../redux/cartSlice";
+import { useState } from "react";
 import "../styles/styles.css";
 
 export default function Header() {
   const cartItems = useSelector((s) => s.cart.items);
   const search = useSelector((s) => s.cart.search);
   const dispatch = useDispatch();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="header">
@@ -38,8 +40,19 @@ export default function Header() {
         )}
       </div>
 
-      <nav>
-        <Link className="nav-link" to="/">
+      <button
+        className={`hamburger ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <div className="hamburger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <nav className={menuOpen ? "open" : ""}>
+        <Link className="nav-link" to="/" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
         <Link className="nav-link" to="/cart">

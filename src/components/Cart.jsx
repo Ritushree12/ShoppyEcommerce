@@ -18,6 +18,9 @@ export default function Cart() {
 
   return (
     <>
+      <Link to="/" className="back-to-products">
+        ← Back to Products
+      </Link>
       {toast && <div className="toast">{toast}</div>}
       {!items.length ? (
         <div className="not-found">
