@@ -194,6 +194,9 @@ body {
   height: 24px;
   cursor: pointer;
 }
+.remove-btn {
+  align-self: center;
+}
 .cart-item button {
   background: none;
   border: none;
@@ -306,6 +309,7 @@ body {
   border: 1px solid #ccc;
   border-radius: var(--border-radius);
   padding: 4px;
+  align-self: center;
 }
 .quantity-input:focus {
   outline: none;

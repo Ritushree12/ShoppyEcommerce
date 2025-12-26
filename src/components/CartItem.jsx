@@ -40,20 +40,22 @@ export default function CartItem({ item, onRemove }) {
             {item.discountPercentage}% OFF
           </span>
         </div>
-
-        <input
-          className="quantity-input"
-          type="number"
-          min="1"
-          value={item.quantity}
-          onChange={(e) =>
-            dispatch(
-              changeQuantity({ id: item.id, quantity: Number(e.target.value) })
-            )
-          }
-        />
       </div>
-      <button onClick={() => onRemove(item.id, item.title)}>
+      <input
+        className="quantity-input"
+        type="number"
+        min="1"
+        value={item.quantity}
+        onChange={(e) =>
+          dispatch(
+            changeQuantity({ id: item.id, quantity: Number(e.target.value) })
+          )
+        }
+      />
+      <button
+        className="remove-btn"
+        onClick={() => onRemove(item.id, item.title)}
+      >
         <img src={trashIcon} alt="Remove" className="trash-icon" />
       </button>
     </div>
