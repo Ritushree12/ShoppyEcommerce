@@ -30,6 +30,23 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.back-to-products {
+  font-size: var(--tiny-size);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 3px 6px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: normal;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+.back-to-products:hover {
+  background-color: var(--secondary-color-hover);
+}
 .toast {
   position: fixed;
   bottom: 20px;
@@ -483,7 +500,7 @@ nav {
 /* Product Detail Page Styles */
 .detail {
   max-width: 1200px;
-  margin: 2rem 3rem;
+  margin: 3rem 4rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
