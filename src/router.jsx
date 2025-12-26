@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import React from "react";
+import ProductList from "./components/ProductList";
 
 const ProductDetail = React.lazy(() => import("./components/ProductDetail"));
 const Cart = React.lazy(() => import("./components/Cart"));
@@ -10,7 +11,7 @@ const NotFound = React.lazy(() => import("./components/NotFound"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <ProductList />,
     errorElement: <NotFound />,
   },
   {

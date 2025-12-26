@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setSearch } from "../redux/cartSlice";
 import { useState } from "react";
@@ -9,6 +9,8 @@ export default function Header() {
   const search = useSelector((s) => s.cart.search);
   const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const showSearch = location.pathname === "/";
 
   return (
     <header className="header">
@@ -21,24 +23,26 @@ export default function Header() {
         ShoppyGlobe
       </h1>
 
-      <div className="search-container">
-        <input
-          className="home-page-search"
-          type="text"
-          placeholder="Search..."
-          value={search}
-          onChange={(e) => dispatch(setSearch(e.target.value))}
-        />
-        {search && (
-          <button
-            className="clear-search-btn"
-            onClick={() => dispatch(setSearch(""))}
-            title="Clear search"
-          >
-            ✕
-          </button>
-        )}
-      </div>
+      {showSearch && (
+        <div className="search-container">
+          <input
+            className="home-page-search"
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => dispatch(setSearch(e.target.value))}
+          />
+          {search && (
+            <button
+              className="clear-search-btn"
+              onClick={() => dispatch(setSearch(""))}
+              title="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      )}
 
       <button
         className={`hamburger ${menuOpen ? "active" : ""}`}
@@ -55,7 +59,11 @@ export default function Header() {
         <Link className="nav-link" to="/" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
-        <Link className="nav-link" to="/cart">
+        <Link
+          className="nav-link"
+          to="/cart"
+          onClick={() => setMenuOpen(false)}
+        >
           <img
             width="15px"
             height="20px"
