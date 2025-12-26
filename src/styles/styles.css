@@ -525,6 +525,12 @@ nav {
 .additional-images img:hover {
   transform: scale(1.1);
 }
+.product-images img {
+  transition: transform 0.3s ease;
+}
+.product-images img:hover {
+  transform: scale(1.1);
+}
 
 .product-info h2 {
   color: var(--primary-color);
